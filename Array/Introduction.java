@@ -1,0 +1,378 @@
+import java.util.Scanner;
+class allTypeString
+{
+public static void main(String []args)
+    {
+	   
+	    do
+	    {
+/* 
+1D Array
+
+Declaration			
+			 int[] a;    
+			 int []a;
+			 int a[];
+			 int[]a;
+			 String[] b;
+			 String []b;
+			 String b[];
+			 String[]b;       
+	         int[3] a; //Error size not declare
+			 int[] a,b ; -a and b both are array
+			 int []a,b ; -a and b both are array
+			 int a[],b ; -a is array but b is only variable
+			 
+creation
+             a= new int[3];-size provide
+			 
+			 Declaration +creation - 
+			 int[] a=new int[3]; default value in array  0 0 0
+			 int[] a=new int[0];-compile and run sucessful
+			 int[] a=new int[-3];-compile sucessful but run time negative Array Size exception
+			 a=new int[3];
+			 a[0]=10;a[1]=20;a[2]=30; then value in array 10 20 30
+			 a[0]=5 a[2]=7 then value in array 5 0 7
+			 a[0]=10;a[1]=20;a[2]=30; a[3]=5 Error ArrayIndexOutOfBoundsException
+			 
+			 
+Initialization
+             Declaration +creation+Initialization -
+			 int[] a={10,20,30}; then value in array 10 20 30
+			 int[] a=new int[]{10,20,30};
+			 
+Retrieve
+             int[] a={10,20,30};
+			 for(int i=0;i<a.length;i++)
+			 {
+				 System.out.print(a[i]);
+			 }
+			 
+			 by for each loop
+			 for(int i:a)
+			 {
+				 System.out.print(i);
+			 }
+2D Array  
+
+Declaration			
+			 int[][] a;    
+			 int [][]a;
+			 int a[][];
+			 int[][]a;
+			 String[][] b;
+			 String [][]b;
+			 String b[][];
+			 String[][]b;       
+	         int[3][4] a; //Error size not declare
+			 int[] a[],b ; -a are 2D array but b is 1D Array
+			 int []a,b[] ; -a and b both are 2D Array
+			 int[][]a,b[] ; -a is 2D Array but b is 3D Array 
+			 int[][]a,[]b ; -Error on Complie time 
+			 
+creation
+             a= new int[2][3];-size provide
+			 
+			 Declaration +creation - 
+			 int[][] a=new int[2][3]; default value in array  0 0 0
+			 int[][] a=new int[0][0];-compile and run sucessful
+			 int[][] a=new int[-3][-3];-compile sucessful but run time negative Array Size exception
+			 int[][] a;
+			 a=new int[2][3]; First Array is repersent Row and Second is column and a is Matrix Array
+			 0    0   0
+			 0    0   0
+			 Matrix Array
+			 int[][] a;
+			 a=new int[2][];
+			 a[0]=new int[3];
+			 a[1]=new int[2];
+			 0   0   0
+			 0   0   
+			 Jagged Array
+			 int[][] a;
+			 a=new int[2][];
+			 a[0]=new int[4];
+			 a[1]=new int[3];
+			 0   0   0   0
+			 0   0   0 
+			 Jagged Array
+			 a[0][3]=20;
+			 a[1][2]=5;
+			 0   0   20   0
+			 0   5   0 
+			 int[][] a;
+			 a=new int[2][3];
+			 a[0][0]=10;a[0][1]=20;a[0][2]=30;
+			 a[1][0]=40;a[1][1]=50;a[1][2]=60;
+             10    20   30
+			 40    50   60
+			 a[0][3]=10; a[2][1]=5; Error ArrayIndexOutOfBoundsException
+			 
+Initialization
+             Declaration +creation+Initialization -
+			 int[][] a=new int[][]{{10,20,30},{40,50,60}}; 
+			 10    20   30
+			 40    50   60
+		     int[][] a={{10,20,30,40},{50,60},{70,80,90}};
+	  the form of creation 
+			 int[][] a=new int[3][];
+			 a[0]=new int[4];
+			 a[1]=new int[2];
+			 a[2]=new int[3];
+	  output		 
+			 10    20   30   40
+			 50    60
+			 70    80   90
+			 
+Retrieve
+              int[][] a={{10,20,30,40},{50,60},{70,80,90}};
+			  System.out.print(a);//[[I@__
+			  System.out.print(a[0]);//[I@__
+			  System.out.print(a[0][0]);// 10
+			  System.out.print(a.length);//3
+			  System.out.print(a[0].length);//4
+			  System.out.print(a[0][0].length);//Error 
+              int[][] a =new int[2][];
+			  System.out.print(a);//[[I@__
+			  System.out.print(a[0]);//null
+			  System.out.print(a[0][0]);// run time exception
+			  System.out.print(a.length);//2	
+			  System.out.print(a[0].length);//Error
+			  
+			 for(int i=0;i<a.length;i++)
+			 {
+				 for(int j=0;i<a[i].length;i++)
+			     {
+				 System.out.print(a[i][j]);
+			     }
+				 System.out.println( );
+			 }
+			 
+3D Array  
+
+Declaration			
+			 int[][][] a;    
+			 int [][][]a;
+			 int a[][][];
+			 int[][] []a;
+			 int[] [][]a;
+			 String[][][] b;
+			 String [][][]b;
+			 String b[][][];
+			 String[][] []b;
+             String[] [][]b; 			 
+	         int[3][2][3] a; //Error size not declare
+			 int[][] a[],b ; -a are 3D array but b is 2D Array
+			 int [][][]a,b ; -a and b both are 3D Array
+			 int[][]a,b[] ; -a is 2D Array but b is 3D Array 
+			 int[][][]a,[]b ; -Error on Complie time 
+			 
+creation
+             a= new int[2][3][4];-size provide
+			 
+			 Declaration +creation - 
+			 int[][][] a=new int[2][3][4]; default value in array 0 0 0
+			 int[][][] a=new int[0][0][0];-compile and run sucessful
+			 int[][][] a=new int[-3][-3][-3];-compile sucessful but run time negative Array Size exception
+			 int[][][] a;
+			 a=new int[2][3][4]; First Array is repersent Row 
+			                               write in indexform
+			                     0                                 1  
+			           0         1         2             0         1          2
+					0 1 2 3   0 1 2 3 	 0 1 2 3     0 1 2 3    0 1 2 3    0 1 2 3
+					{     {   {      },{        },{          }  }     ,      {   {      },{        },{         }  }     }                          }      }
+						   
+			 int[][] a;
+			 a=new int[2][][];
+			 a[0]=new int[2][];
+			 a[0][0]=new int[3];
+			 a[0][1]=new int[2];
+			 a[1]=new int[2][];
+			 a[1][0]=new int[2];
+			 a[1][1]=new int[3];
+			                      write in indexform
+			                0                                 1   
+			           0         1                      0         1          
+					 0 1 2      0 1       	           0 1      0 1 2    
+			 
+			 a[0][1][0]=20;
+			 a[0][1][0]=25;
+			 a[1][0][1]=5;
+			 a[1][1][1]=15;
+			 a[0][0][1]=35;
+			 
+			                       write after initializing form
+			                0                                 0   
+			           0         0                      0         0          
+					 20 35 0    25 0       	           0 5      0 15 0  
+			 Error ArrayIndexOutOfBoundsException
+			 a[0][3]=10; a[2][1]=5; 
+			 a[0][1]=20;
+			 a[1][1]=26;
+			 a[1][0]=30;
+			 
+Initialization
+             Declaration +creation+Initialization -
+			 int[][][] a=new int[][][]{{10,20,30},{40,50,60}}; 
+			 10    20   30
+			 40    50   60
+		     int[][] a={{10,20,30,40},{50,60},{70,80,90}};
+	  the form of creation 
+			 int[][] a=new int[3][];
+			 a[0]=new int[4];
+			 a[1]=new int[2];
+			 a[2]=new int[3];
+	  output		 
+			 10    20   30   40
+			 50    60
+			 70    80   90
+			 
+Retrieve
+              int[][] a={{{10,20},{30,40,50,60},{70,80,90}}};
+			  System.out.print(a);//[[[I@__
+			  System.out.print(a[0]);//[[I@__
+			  System.out.print(a[0][0]);//[I@__
+			  System.out.print(a.length);//1
+			  System.out.print(a[0].length);//3
+			  System.out.print(a[0][0].length);//2 
+			  System.out.print(a[0][1].length);//4 
+			  System.out.print(a[0][2].length);//3 
+			  System.out.print(a[1][0].length);//Error
+            		  
+			 for(int i=0;i<a.length;i++)
+			 {
+				 for(int j=0;i<a[i].length;i++)
+			     {   
+			          for(int k=0;k<a[i][j].length;k++)
+			          {
+				         System.out.print(a[i][j][k]);
+			          }
+				
+			     }
+				 System.out.println( );
+			 }
+            //1D Array
+	    int[] b;//declaration    size cannot provide
+		b=new int[3];//creation  size can provide but not must
+		int[] a={10,20,30};//initialization elements initialization must
+		for(int i=0;i<a.length;i++) //by for loop
+		{
+				System.out.print(a[i]+" ");
+		}	 
+			System.out.println( );
+		for(int i:a)//by for-each loop
+		{
+			    System.out.print(i+" ");
+		}
+		a[0]=40;
+        a[1]=50;
+        a[2]=60;
+		System.out.println( );
+        for(int i:a)//by for-each loop
+		{
+				System.out.print(i+" ");
+		}	
+        System.out.println( );
+        //2D Array
+		System.out.println("2D Array" );
+		int[][] c;//declaration    size cannot provide
+		c=new int[3][4];//creation  size can provide but not must
+		int[][] e={{1,2,3},{4,5,6,7}};//initialization elements initialization must
+		for(int i=0;i<e.length;i++) //by for loop
+		{
+			for(int j=0;j<e[i].length;j++)
+			{
+				System.out.print(e[i][j]+" ");
+			}
+			System.out.println( );
+		}	 
+		System.out.println( );
+		for(int i[]:e)//by for-each loop
+		{
+			for(int j:i)
+			{
+			    System.out.print(j+" ");
+			}
+			System.out.println( );
+		}
+		
+		e[0][0]=100;
+		e[0][1]=110;
+		e[0][2]=120;
+		e[1][0]=130;
+		e[1][1]=140;
+		e[1][2]=150;
+		e[1][3]=150;
+		
+		System.out.println( );
+        for(int i[]:e)//by for-each loop
+		{
+			for(int j:i)
+			{
+			    System.out.print(j+" ");
+			}
+			System.out.println( );
+		}
+		//3D Array
+		System.out.println("3D Array" );
+		int[][][] f;//declaration    size cannot provide
+		f=new int[2][2][3];//creation  size can provide but not must
+		int[][][] g={  {  {1,2,3},{4,5,6,7}  },{   {7,8,9},{10,11,12},{ 13,14,15,16,17}  }   };//initialization elements initialization must
+		for(int i=0;i<g.length;i++) //by for loop
+		{
+			for(int j=0;j<g[i].length;j++)
+			{
+				for(int k=0; k<g[i][j].length;k++)
+				{
+				    System.out.print(g[i][j][k]+" ");
+				}
+				System.out.println( );
+			}
+			System.out.println( );
+		}	 
+		System.out.println( );
+		for(int i[][]:g)//by for-each loop
+		{
+			for(int j[]:i)
+			{
+				for(int k:j)
+				{
+			        System.out.print(k+" ");
+				}
+				System.out.println( );
+			}
+			System.out.println( );
+		}
+		
+		g[0][0][0]=100;
+		g[0][0][1]=110;
+		g[0][0][2]=120;
+		g[0][1][0]=130;
+		g[0][1][1]=140;
+		g[0][1][2]=150;
+		g[1][0][0]=160;
+		g[1][0][1]=170;
+		g[1][0][2]=180;
+		g[1][1][0]=190;
+		g[1][1][1]=200;
+		g[1][1][2]=220;
+		
+		System.out.println( );
+        for(int i[][]:g)//by for-each loop
+		{
+			for(int j[]:i)
+			{
+				for(int k:j)
+				{
+					
+			        System.out.print(k+" ");
+				}
+				System.out.println( );
+			}
+			System.out.println( );
+		}			 
+		}
+        while(no<1);		
+	}
+	
+}
